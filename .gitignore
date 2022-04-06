@@ -1,0 +1,10 @@
+.vercel
+
+# Project exclude paths
+/node_modules/
+/src/common/http-exception.js
+/src/middleware/error.middleware.js
+/src/middleware/not-found.middleware.js
+/src/nsfw/nsfw.router.js
+/src/nsfw/nsfw.service.js
+/src/index.js
