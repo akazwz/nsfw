@@ -1,20 +1,18 @@
 # NSFW API
 
-[简体中文](README_ZH.md)
+### NSFW 分类: 使用 nsfwjs 和 express 构建
 
-### NSFW classify: build with nsfwjs and express
-
-### Docker build and deploy
+### Docker 打包和部署
 
 ```shell
 docker image build -t nsfw:0.1 .
 ```
 
-### Classify include: drawing,hentai,neutral,porn,sexy
+### 内容分类包括: 色情,低俗，绘画,动画,正常
 
-### Response:
+### 返回格式:
 
-value bigger, more fit to classify
+数值越大，代表越符合分类
 
 ````json
 {
