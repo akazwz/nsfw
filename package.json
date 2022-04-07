@@ -10,6 +10,8 @@
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.6.2",
+    "@grpc/proto-loader": "^0.6.9",
     "@tensorflow/tfjs-node": "^3.15.0",
     "@types/multer": "^1.4.7",
     "axios": "^0.26.1",

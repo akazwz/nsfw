@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv'
 import { errorHandler } from './middleware/error.middleware'
 import { notFoundHandler } from './middleware/not-found.middleware'
 import { nsfwRouter } from './nsfw/nsfw.router'
+import { StartGrpc } from '../grpc/server'
 
 dotenv.config()
 
@@ -23,4 +24,5 @@ app.use(notFoundHandler)
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`)
+  StartGrpc()
 })
