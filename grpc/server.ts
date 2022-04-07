@@ -7,7 +7,7 @@ const grpc = require('@grpc/grpc-js')
 let cnt = 1
 
 function sayHello(call: any, callback: any) {
-  callback(null, { message: `[${cnt++}] echo: ` + call.request.message })
+  callback(null, { message: `[${cnt++}] Hello: ` + call.request.message })
 }
 
 async function classifyImage(call: any, callback: any) {
@@ -15,9 +15,23 @@ async function classifyImage(call: any, callback: any) {
   try {
     const img: any = tf.node.decodeImage(image, 3)
     const result = await nsfwService.detectiveUrl(img)
-    callback(null, { message: result })
+    const { drawing, hentai, neutral, porn, sexy } = result
+    callback(null, {
+      drawing: drawing,
+      hentai: hentai,
+      neutral: neutral,
+      porn: porn,
+      sexy: sexy,
+    })
   } catch (e) {
-    callback(null, { message: 'classify error' })
+    console.log(e)
+    callback(null, {
+      drawing: 0,
+      hentai: 0,
+      neutral: 0,
+      porn: 0,
+      sexy: 0,
+    })
   }
 }
 

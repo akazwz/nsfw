@@ -11,5 +11,9 @@ message ClassifyRequest {
 }
 
 message ClassifyReply {
-  string message = 1;
+  double drawing = 1;
+  double hentai = 2;
+  double neutral = 3;
+  double porn = 4;
+  double sexy = 5;
 }
