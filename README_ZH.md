@@ -1,6 +1,8 @@
 # NSFW API
 
-### NSFW 分类: 使用 nsfwjs 和 express 构建
+### NSFW 分类: 使用 nsfwjs 和 express 和 grpc 构建
+
+### 提供 restful 接口 和 grpc 调用
 
 ### Docker 打包和部署
 
