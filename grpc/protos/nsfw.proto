@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package nsfw;
+
+service Classify {
+  rpc ClassifyImage(ClassifyRequest) returns (ClassifyReply) {}
+}
+
+message ClassifyRequest {
+  bytes image = 1;
+}
+
+message ClassifyReply {
+  string message = 1;
+}
