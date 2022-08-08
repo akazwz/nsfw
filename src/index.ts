@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import * as dotenv from 'dotenv'
+
 import { errorHandler } from './middleware/error.middleware'
 import { notFoundHandler } from './middleware/not-found.middleware'
 import { nsfwRouter } from './nsfw/nsfw.router'
@@ -23,6 +24,6 @@ app.use(errorHandler)
 app.use(notFoundHandler)
 
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`)
-  StartGrpc()
+	console.log(`Listening on port ${PORT}`)
+	StartGrpc()
 })
