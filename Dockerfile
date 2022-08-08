@@ -1,25 +1,22 @@
-FROM node:buster-slim
+FROM node:lts-slim
 
-WORKDIR /usr/app
-
-RUN apt-get update && \
-  apt-get install -y build-essential \
-  wget \
-  python3 \
-  make \
-  gcc \
-  libc6-dev
+RUN apt-get update && apt-get install -y python3 build-essential wget unzip \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY package.json ./
 
-ENV NODE_ENV production
+RUN npm_config_build_from_source=true yarn install --prod
 
-RUN yarn install --prod
+RUN wget -q https://s3.amazonaws.com/nsfwdetector/nsfwjs.zip  \
+    && unzip -j nsfwjs.zip -d ./model \
+    && rm nsfwjs.zip
 
 COPY . .
 
 RUN yarn build
 
-EXPOSE 7000
+RUN npm rebuild @tensorflow/tfjs-node --build-addon-from-source
 
-CMD ["yarn", "start"]
+EXPOSE 3000
+
+ENTRYPOINT ["yarn", "start"]
