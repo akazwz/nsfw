@@ -13,6 +13,7 @@ nsfwRouter.get('/file', upload.single('image'), async (req: Request, res: Respon
     if (!req.file) {
       return res.status(200).send('no file')
     }
+    req.ips
     const image: any = tf.node.decodeImage(req.file.buffer, 3)
     const result = await nsfwService.detectiveUrl(image)
     res.status(200).send(result)

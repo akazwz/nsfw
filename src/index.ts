@@ -19,6 +19,12 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api/nsfw', nsfwRouter)
+app.get('/ip', async(req, res) => {
+	const ips = req.ips
+	res.status(200).json({
+		ips,
+	})
+})
 
 app.use(errorHandler)
 app.use(notFoundHandler)
