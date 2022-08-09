@@ -21,8 +21,10 @@ app.use(express.json())
 app.use('/api/nsfw', nsfwRouter)
 app.get('/ip', async(req, res) => {
 	const ips = req.ips
+	const ip = req.ip
 	res.status(200).json({
 		ips,
+		ip,
 	})
 })
 
