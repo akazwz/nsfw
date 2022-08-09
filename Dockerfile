@@ -1,6 +1,6 @@
 FROM node:lts-slim
 
-RUN apt-get update && apt-get install -y python3 build-essential wget unzip \
+RUN apt-get install -y python3 build-essential wget unzip \
     && rm -rf /var/lib/apt/lists/*
 
 COPY package.json ./
