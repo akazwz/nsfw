@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: akazwz/nsfw:${TAG}
     ports:
       - "7000:7000"
       - "50051:50051"
