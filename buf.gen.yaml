@@ -1,0 +1,11 @@
+# buf.gen.yaml
+version: v2
+managed:
+  enabled: true
+inputs:
+  - module: buf.build/akazwz/nsfw:main
+plugins:
+  - remote: buf.build/community/stephenh-ts-proto:v1.178.0
+    out: src/gen
+    opt:
+      - outputServices=grpc-js

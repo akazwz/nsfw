@@ -1,0 +1,36 @@
+{
+  "name": "nsfw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "dev:http": "nodemon src/http.ts",
+    "dev:grpc": "nodemon src/grpc.ts",
+    "build": "tsc",
+    "start": "node src/index.js",
+    "start:http": "node src/http.js",
+    "start:grpc": "node src/grpc.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.8",
+    "@types/node": "^22.5.5",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.0.0",
+    "@grpc/grpc-js": "^1.11.2",
+    "@grpc/proto-loader": "^0.7.13",
+    "@hono/node-server": "^1.12.2",
+    "@tensorflow/tfjs-node": "^4.21.0",
+    "axios": "^1.7.7",
+    "hono": "^4.6.1",
+    "nsfwjs": "^4.1.0",
+    "protobufjs": "^7.4.0"
+  }
+}
